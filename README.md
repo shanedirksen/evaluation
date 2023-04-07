@@ -13,11 +13,11 @@ When you are finished, push the code to your own repo and send the link to maxwi
 ---
 ## Info
 
-Name: 
+Name: Shane Dirksen
 
-Email:
+Email: srdirksen@cpp.edu
 
-Project you are applying for:
+Project you are applying for: Currently, I am open to any of the projects. However, I am especially interested in BroncoEmber and CubeSats.
 
 
 ---
@@ -43,15 +43,18 @@ What is one difference between a float and an int?
 
 What does an activity diagram show?
 
+> An activity diagram shows the flow of events for a function, program, system, etc. It can have conditions with different paths and different shapes represent specific states.
 
 Which of these languages offers the lowest level of control and fastest execution?
  - Python
  - C#
  - Java
- - C
+ > - C
 
 
 What is the purpose of version control systems (VCS) such as Git or Mercurial?
+
+> A version control system allows multiple people to work on a project while minimizing issues by tracking changes and allowing users to branch off and merge back with the main branch.
 
 ---
 **Embedded Systems**
@@ -62,24 +65,27 @@ Which level of cache would be accessible by only a single core on a multi-core c
  - L3
  - All levels
 
+> Any choice I pick would honestly be a guess.
 
 Explain one difference between any of these 2 protocols: I2C, SPI, UART:
 
+> I do not know any of these protocols.
 
 What is a feature Java has that C++ does not?
  - Object oriented classes
  - Lambda expressions
  - Data streams
- - Implicit garbage collection
+ > - Implicit garbage collection
 
 
 Name one major concern when developing for embedded systems and edge computing such as a deployed Jetson or Raspberry Pi:
 
+> Managing the limitations of physical resources on these devices. There is typically limited processing and storage capabilities and simply increasing these limits would increase the weight of the device.
 
 Which of the following is a job for the DHCP server?
  - Route packets out to the internet
  - Make particular ports available for access on the inter/intranet
- - Assign IP addresses on the network
+ > - Assign IP addresses on the network
  - Look up what domain name maps to an address on the internet
 
 ---
@@ -87,9 +93,10 @@ Which of the following is a job for the DHCP server?
 
 What does the permission code 777 represent (as used in `chmod 777`)?
 
+> The three positions of chmod are read, write and execute. '7' allows the user full permision, so '777' would give permission to read, write, and execute a file.
 
 Which of these commands sets and environment variable in Linux? 
- - export VAR=val
+> - export VAR=val
  - export $VAR=val 
  - echo VAR=val
  - echo $VAR=val
@@ -97,31 +104,34 @@ Which of these commands sets and environment variable in Linux?
 
 What is one major role of systemd?
 
+> Systemd starts and manages the other Linux programs.
 
 ---
 **AI**
 
 Which of these network architectures would be best suited for processing text?
  - Convolution Neural Network
- - Recurrent Neural Network
+ > - Recurrent Neural Network
  - Multilayer Perceptron
  - U-Net
 
 
 What is one solution to the vanishing gradient problem in backprop?
 
+> Using ReLu as the activation function
 
 What is the traditional flow of interactions for a reinforcement learning agent?
  - Read the current state, take an action, environment updates state
- - Make a prediction, evaluate the loss from a target, update model with backprop
+> - Make a prediction, evaluate the loss from a target, update model with backprop
  - Generate result, compare result to similar objects of the class, improve discriminator and predictor
 
 
 Briefly describe either branch and bound or dynamic programming:
 
+> Branch and bound is an optimization paradigm that uses a tree to determine cost/value of each job, branching down from a root. It can be traversed depth first or breadth first.
 
 What is the main challenge with implementing A*:
  - Picking the correct heuristic
  - Initialization parameters
  - Solution will not converge
- - Too long of an execution compared to other common pathfinders
+ > - Too long of an execution compared to other common pathfinders
