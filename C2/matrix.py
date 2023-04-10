@@ -10,15 +10,36 @@ class MatrixOps:
         self._kernel = np.random.randint(-2,2, size=(3,3))
     
     def largest_index(self, matrix):
-        ''' Make this function return a tuple of the (row, col) 
-            index of the largest value in the matrix '''
+        max_val = matrix[0, 0]
+        max_index = (0, 0)
 
-        return (0,0)
+        #iterate through the matrix
+        for row in range(matrix.shape[0]):
+            for col in range(matrix.shape[1]):
+                if matrix[row, col] > max_val:
+                    max_val = matrix[row, col]
+                    max_index = (row, col)
+
+        return max_index
 
     def convolve(self, kernel, matrix):
-        ''' Make this function return the result of a 2D convolution '''
+        rows, cols = matrix.shape
+        k_rows, k_cols = kernel.shape
+        #get the padding
+        pad_rows = k_rows // 2
+        pad_cols = k_cols // 2
 
-        return matrix
+        #initialize padded matrix
+        padded_matrix = np.zeros((rows + 2 * pad_rows, cols + 2 * pad_cols))
+        padded_matrix[pad_rows:-pad_rows, pad_cols:-pad_cols] = matrix
+
+        #convolve
+        convolved_matrix = np.zeros_like(matrix)
+        for row in range(rows):
+            for col in range(cols):
+                convolved_matrix[row, col] = np.sum(padded_matrix[row:row + k_rows, col:col + k_cols] * kernel)
+
+        return convolved_matrix
 
     def run(self):
         print("Largest index is at ", self.largest_index(self._matrix))

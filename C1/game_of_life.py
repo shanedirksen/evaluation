@@ -15,14 +15,32 @@ class Game:
 
     
     def update(self):
-        board = np.copy(self._board)
-        
-        ''' Insert your code for updating the board based on the rules below '''
+        new_board = np.copy(self._board)
+        rows, cols = self._board.shape
 
+        #iterate through board
+        for row in range(rows):
+            for col in range(cols):
+                alive_neighbors = 0
+                #iterate through neighbors
+                for i in range(-1, 2):
+                    for j in range(-1, 2):
+                        if i == 0 and j == 0: #pass over current cell
+                            continue
+                        # get the neighbor indices (including wrapping around the board)
+                        r = (row + i) % rows
+                        c = (col + j) % cols
+                        alive_neighbors += self._board[r, c] #get the living neighbors
+                #if cell is alive with too few/too many neighbors, it dies
+                if self._board[row, col] == 1:
+                    if alive_neighbors < 2 or alive_neighbors > 3:
+                        new_board[row, col] = 0
+                #new cell is born
+                else:
+                    if alive_neighbors == 3:
+                        new_board[row, col] = 1
 
-
-        
-        self._board = board
+        self._board = new_board
 
 
     def play(self, delay=.1):
